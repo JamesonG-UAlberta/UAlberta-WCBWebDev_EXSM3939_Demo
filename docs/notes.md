@@ -1,4 +1,6 @@
 # Notes for React
+## Note for Cloning React Projects
+You **MUST** run `npm install restore` on any React project that has `/node_modules` in `.gitignore`, or **it will refuse to even start**.
 ## Main React Files
 React relies on several files just to achieve the template. They have a flow to them, as follows:
 1. `public/index.html`, the traditional HTML file is basically empty aside from a notice to anyone with JS disabled that they need it on, and an empty div with an ID of "root". This div serves as the entry point for React (where it renders everything).

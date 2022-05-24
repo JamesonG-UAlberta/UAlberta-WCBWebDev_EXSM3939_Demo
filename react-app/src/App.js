@@ -4,7 +4,7 @@ import './App.css';
 // Whatever gets returned from this method (should probably be JSX) is what will get pushed into the "root" div in the HTML.
 function App() {
   // We can declare variables, use methods, etc just like JavaScript.
-  let myName = "Bob";
+  let myName = "Joe";
   // Delimit our returned JSX with parentheses:
   return (
     <div className="App">

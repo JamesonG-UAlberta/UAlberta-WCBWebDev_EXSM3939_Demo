@@ -3,6 +3,7 @@ import './App.css';
 import React, { useState } from 'react';
 import MyComponentFunctional from './MyComponentFunctional';
 import MyComponentClassBased from './MyComponentClassBased';
+import Stopwatch from './Stopwatch';
 
 
 // Whatever gets returned from this method (should probably be JSX) is what will get pushed into the "root" div in the HTML.
@@ -18,6 +19,11 @@ function App() {
       <div className='flex'>
         <MyComponentFunctional />
         <MyComponentClassBased />
+      </div>
+      <div className='flex'>
+        <Stopwatch />
+        <Stopwatch />
+        <Stopwatch />
       </div>
       
       <footer>

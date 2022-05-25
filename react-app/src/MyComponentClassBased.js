@@ -45,11 +45,12 @@ class MyComponentClassBased extends React.Component {
                 <h2>Class-Based Component!</h2>
                 {/* When we reference state in a class-based object, we must reference it through this.state */}
                 <p>Hello, {this.state.name}!</p>
-                <input id="classBasedName" type="text"></input>
+                { /* Using the ref attribute we can associate an element/node in JSX to a property of the class, allowing us to skip a lot of the querySelector-ing. */ }
+                <input id="classBasedName" type="text" ref={thisNode => this.textField = thisNode}></input>
                 {/* When we ask an HTML event to fire a method in a class-based React component, we have to do ".bind(this)" at the end in order to associate it with the component. */}
                 <button id="classBasedButton" onClick={
                     (() => {this.setState({
-                        name: document.querySelector("#classBasedName").value
+                        name: this.textField.value
                     });}).bind(this)
                 }>Click Me!</button>
             </main>

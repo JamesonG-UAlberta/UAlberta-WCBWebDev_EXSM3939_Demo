@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 
 // Functional components are more streamlined but allow less lifecycle control.
@@ -7,7 +7,9 @@ function MyComponentFunctional() {
 
     // State properties are initialized using useState in functional components.
     const [name, setName] = useState("World");
-
+    // Using refs in functional components requires them to be initialized with useRef().
+    // They are then assigned using ref={name}, and referenced using name.current.
+    const inputField = useRef();
     
    function updateStateProp() {
         // State properties are updated using their individual methods in functional components.
@@ -31,8 +33,8 @@ function MyComponentFunctional() {
         <main>
             <h2>Functional Component!</h2>
             <p>Hello, {name}!</p>
-            <input id="functionalName" type="text"></input>
-            <button id="functionalButton" onClick={() => {setName(document.querySelector("#functionalName").value);}}>Click Me!</button>
+            <input id="functionalName" type="text" ref={inputField}></input>
+            <button id="functionalButton" onClick={() => {setName(inputField.current.value);}}>Click Me!</button>
         </main>
     );
 }

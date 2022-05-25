@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import EmployeeTable from './EmployeeTable';
 import './App.css';
 
 
@@ -15,9 +14,6 @@ function App() {
       </header>
       <main>
         <h2>Here's some stuff!</h2>
-        <EmployeeTable />
-        <EmployeeTable />
-
       </main>
       <footer>
         <p>Thank you, come again.</p>

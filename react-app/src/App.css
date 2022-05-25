@@ -45,9 +45,11 @@ td, th {
   padding: 3px;
 }
 
-main {
+.flex {
   display: flex;
-  flex-direction: column;
+  width: 80%;
+  min-width: 400px;
+  max-width: 960px;
   justify-content: space-between;
-  align-items: center;
+  margin: 0 auto;
 }

@@ -3,17 +3,26 @@ import React from 'react';
 
 
 // Class based components allow you to have more control over the component lifecycle in a more familiar (in some cases) syntax.
-class MyComponent extends React.Component {
+class MyComponentClassBased extends React.Component {
     // -------------------------
     // Initial Component Setup (Once)
     // -------------------------
 
     // 1. Gets called on inital setup (prior to the initial render).
     constructor() {
+        // The React.Component constructor MUST be called.
+        super();
+
+        // State properties are set using setState in class-based components.
         this.setState({
             testState: false,
             name: "James",
             count: 10
+        });
+
+        // State properties are updated using setState in class-based components.
+        this.setState({
+            name: "Bob"
         });
     }
 
@@ -21,7 +30,7 @@ class MyComponent extends React.Component {
 
     // 3. componentDidMount gets called on the initial render (after the render takes place).
     componentDidMount() {
-        
+
     }
 
     // -------------------------
@@ -37,7 +46,7 @@ class MyComponent extends React.Component {
     render() {
         return (
             <main>
-                <h2>Hello, everyone!</h2>
+                <h2>Class-Based Component!</h2>
                 <p>Let's learn React!</p>
             </main>
         );
@@ -65,4 +74,4 @@ class MyComponent extends React.Component {
 }
 
 
-export default MyComponent;
+export default MyComponentClassBased;

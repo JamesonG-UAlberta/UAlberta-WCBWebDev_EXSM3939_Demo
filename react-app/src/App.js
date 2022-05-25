@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
-import MyComponent from './MyComponent';
+import MyComponentFunctional from './MyComponentFunctional';
+import MyComponentClassBased from './MyComponentClassBased';
 
 
 // Whatever gets returned from this method (should probably be JSX) is what will get pushed into the "root" div in the HTML.
@@ -14,7 +15,11 @@ function App() {
       <header className="App-header">
         <h1>Welcome to My First React App!</h1>
       </header>
-      <MyComponent />
+      <div className='flex'>
+        <MyComponentFunctional />
+        <MyComponentClassBased />
+      </div>
+      
       <footer>
         <p>Thank you, come again.</p>
       </footer>

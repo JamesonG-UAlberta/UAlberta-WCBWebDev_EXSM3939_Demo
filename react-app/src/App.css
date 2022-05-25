@@ -53,3 +53,10 @@ td, th {
   justify-content: space-between;
   margin: 0 auto;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}

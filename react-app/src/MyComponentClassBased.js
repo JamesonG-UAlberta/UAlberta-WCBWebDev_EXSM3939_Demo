@@ -13,17 +13,12 @@ class MyComponentClassBased extends React.Component {
         // The React.Component constructor MUST be called.
         super();
 
-        // State properties are set using setState in class-based components.
-        this.setState({
-            testState: false,
-            name: "James",
-            count: 10
-        });
+        // State properties are initialized by assigning the state object in class-based components.
+        this.state = {
+            name: "World"
+        };
 
-        // State properties are updated using setState in class-based components.
-        this.setState({
-            name: "Bob"
-        });
+        
     }
 
     // 2. render gets called for the initial loading to the page.
@@ -32,22 +27,27 @@ class MyComponentClassBased extends React.Component {
     componentDidMount() {
 
     }
-
+    
     // -------------------------
     // Component Refresh (Zero to Many Times)
     // -------------------------
 
     // 1. shouldComponentUpdate gets called once an update (or not) is determined for the component.
+    /*
     shouldComponentUpdate() {
 
     }
-
+    */
     // 2. Render gets called every time the component "refreshes" in the browser (typically due to a state change).
     render() {
         return (
             <main>
                 <h2>Class-Based Component!</h2>
-                <p>Let's learn React!</p>
+                {/* When we reference state in a class-based object, we must reference it through this.state */}
+                <p>Hello, {this.state.name}</p>
+                <input id="classBasedName" type="text"></input>
+                {/* When we ask an HTML event to fire a method in a class-based React component, we have to do ".bind(this)" at the end in order to associate it with the component. */}
+                <button id="classBasedButton" onClick={this.clickedButton.bind(this)}>Click Me!</button>
             </main>
         );
     }
@@ -70,6 +70,19 @@ class MyComponentClassBased extends React.Component {
     // componentDidCatch runs if there's an exception.
     componentDidCatch () {
 
+    }
+
+    updateStateProp() {
+        // State properties are updated using setState in class-based components.
+        this.setState({
+            name: "Bob"
+        });
+    }
+
+    clickedButton() {
+        this.setState({
+            name: document.querySelector("#classBasedName").value
+        });
     }
 }
 

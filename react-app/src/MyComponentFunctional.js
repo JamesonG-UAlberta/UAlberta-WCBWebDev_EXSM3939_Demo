@@ -27,16 +27,12 @@ function MyComponentFunctional() {
 
     // There is no "nice" way to do shouldComponentUpdate or componentDidCatch in functional components.
 
-    function clickedButton() {
-        setName(document.querySelector("#functionalName").value);
-    }
-
     return (
         <main>
             <h2>Functional Component!</h2>
             <p>Hello, {name}!</p>
             <input id="functionalName" type="text"></input>
-            <button id="functionalButton" onClick={clickedButton}>Click Me!</button>
+            <button id="functionalButton" onClick={() => {setName(document.querySelector("#functionalName").value);}}>Click Me!</button>
         </main>
     );
 }

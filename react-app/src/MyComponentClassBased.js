@@ -44,10 +44,14 @@ class MyComponentClassBased extends React.Component {
             <main>
                 <h2>Class-Based Component!</h2>
                 {/* When we reference state in a class-based object, we must reference it through this.state */}
-                <p>Hello, {this.state.name}</p>
+                <p>Hello, {this.state.name}!</p>
                 <input id="classBasedName" type="text"></input>
                 {/* When we ask an HTML event to fire a method in a class-based React component, we have to do ".bind(this)" at the end in order to associate it with the component. */}
-                <button id="classBasedButton" onClick={this.clickedButton.bind(this)}>Click Me!</button>
+                <button id="classBasedButton" onClick={
+                    (() => {this.setState({
+                        name: document.querySelector("#classBasedName").value
+                    });}).bind(this)
+                }>Click Me!</button>
             </main>
         );
     }
@@ -76,12 +80,6 @@ class MyComponentClassBased extends React.Component {
         // State properties are updated using setState in class-based components.
         this.setState({
             name: "Bob"
-        });
-    }
-
-    clickedButton() {
-        this.setState({
-            name: document.querySelector("#classBasedName").value
         });
     }
 }

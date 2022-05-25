@@ -15,3 +15,9 @@ JSX is a hybrid language of HTML and JavaScript. It's basically just HTML, howev
 
 `let myName = "Joe";`
 `<p>Hello, {myName}!</p>`
+
+## Functional vs Class-Based React
+React supports two syntaxes for components, functional and class-based. Functional is more concise, but allows for less control over component lifecycle in a readable manner. Class-based takes more code to do the same thing, but gives much more control over lifecycle. 
+
+## State
+State represents properties of a component that are integral to that component's behaviour or appearance. This means that if state is changed, it will trigger a re-rendering of the component, while if a "normal" local variable is changed it will not.

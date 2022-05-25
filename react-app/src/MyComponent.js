@@ -10,7 +10,11 @@ class MyComponent extends React.Component {
 
     // 1. Gets called on inital setup (prior to the initial render).
     constructor() {
-
+        this.setState({
+            testState: false,
+            name: "James",
+            count: 10
+        });
     }
 
     // 2. render gets called for the initial loading to the page.

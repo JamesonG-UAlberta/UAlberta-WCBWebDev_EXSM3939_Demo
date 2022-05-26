@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState, useEffect, useRef } from 'react';
 
-function Stopwatch() {
+function StopwatchFunctional() {
     const [seconds, setSeconds] = useState(0);
     const [timer, setTimer] = useState(undefined);
     
@@ -21,4 +21,4 @@ function Stopwatch() {
     );
 }
 
-export default Stopwatch;
+export default StopwatchFunctional;

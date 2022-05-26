@@ -6,6 +6,7 @@ import MyComponentClassBased from './MyComponentClassBased';
 import StopwatchFunctional from './StopwatchFunctional';
 import StopwatchClassBased from './StopwatchClassBased';
 import ColourThingy from './ColourThingy';
+import ToDo from './ToDo';
 
 // Whatever gets returned from this method (should probably be JSX) is what will get pushed into the "root" div in the HTML.
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <StopwatchClassBased start="4623" />
       </div>
       <ColourThingy />
+      <ToDo />
       <footer>
         <p>Thank you, come again.</p>
       </footer>

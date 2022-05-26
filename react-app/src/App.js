@@ -5,6 +5,7 @@ import MyComponentFunctional from './MyComponentFunctional';
 import MyComponentClassBased from './MyComponentClassBased';
 import StopwatchFunctional from './StopwatchFunctional';
 import StopwatchClassBased from './StopwatchClassBased';
+import ColourThingy from './ColourThingy';
 
 // Whatever gets returned from this method (should probably be JSX) is what will get pushed into the "root" div in the HTML.
 function App() {
@@ -22,9 +23,10 @@ function App() {
       </div>
       <div className='flex'>
         <StopwatchFunctional />
-        <StopwatchClassBased />
+        <StopwatchClassBased start="61" />
+        <StopwatchClassBased start="4623" />
       </div>
-      
+      <ColourThingy />
       <footer>
         <p>Thank you, come again.</p>
       </footer>

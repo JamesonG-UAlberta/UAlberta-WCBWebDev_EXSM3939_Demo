@@ -2,11 +2,11 @@ import './App.css';
 import React from 'react';
 
 class StopwatchClassBased extends React.Component {
-    constructor() {
+    constructor(props) {
         super();
         // Example 1 Start
         this.state = {
-            seconds: 0,
+            seconds: Number(props.start),
             timer: undefined
         };
         // Example 1 End
@@ -16,16 +16,20 @@ class StopwatchClassBased extends React.Component {
     render() {
         return (
             <div>
-                <p>{Math.floor(this.state.seconds/3600)}:{Math.floor((this.state.seconds%3600)/60)}:{this.state.seconds%60}</p>
+                <p>H:M:S</p>
+                <p>{String(Math.floor(this.state.seconds/3600)).padStart(2,"0")}:{String(Math.floor((this.state.seconds%3600)/60)).padStart(2,"0")}:{String(this.state.seconds%60).padStart(2,"0")}</p>
                 <button onClick={() => {
-                    // Example 2 Start
-                    this.setState({ 
-                        timer: setInterval(() => {
-                            this.setState({
-                                seconds: this.state.seconds + 1}
-                            );
-                        }, 1000)
-                    });
+                    if (this.state.timer === undefined)
+                    {
+                        // Example 2 Start
+                        this.setState({ 
+                            timer: setInterval(() => {
+                                this.setState({
+                                    seconds: this.state.seconds + 1}
+                                );
+                            }, 1000)
+                        });
+                    }
                     // Example 2 End
                 }}>Start</button>
     

@@ -3,7 +3,7 @@ import React from 'react';
 
 /* 
 To-Do To-Do's!
-1. Using the method shown in the ColourThingy component, bind the text field to a state property, and clear it after adding an item.
+☑ 1. Using the method shown in the ColourThingy component, bind the text field to a state property, and clear it after adding an item.
 2. Add a clear button.
 3. Add a sort button (alphabetical).
 4. Add checkboxes to each item.
@@ -16,8 +16,17 @@ class ToDo extends React.Component {
         super(props);
         // Initialize state.
         this.state = {
-            items: []
+            items: [],
+            inputValue: ""
         }
+
+        this.handleInput = this.handleInput.bind(this);
+    }
+
+    handleInput(event) {
+        this.setState({
+            inputValue: event.target.value
+        });
     }
 
     render() {
@@ -28,7 +37,7 @@ class ToDo extends React.Component {
                     {this.state.items.map(x => <li>{x}</li>)}
                 </ul>
                 {/* Bind our input to a reference called toDoInput, allowing us to use it without a querySelector, etc.*/}
-                <input type="text" ref={thisNode => this.toDoInput = thisNode}></input>
+                <input type="text" value={this.state.inputValue} ref={thisNode => this.toDoInput = thisNode} onChange={this.handleInput}></input>
                 <button onClick={(() => {
                     {/* 
                         When we click the button, overwrite the existing items array with the previous items plus the new item. 
@@ -43,6 +52,9 @@ class ToDo extends React.Component {
                             items: [...currentState.items, this.toDoInput.value.trim()]
                         }));
                     }
+                    this.setState({
+                        inputValue: ""
+                    });
                     this.toDoInput.focus();
                 }).bind(this)}>Add Item</button>
             </div>

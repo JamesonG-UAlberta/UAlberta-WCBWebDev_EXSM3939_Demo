@@ -13,9 +13,18 @@ class InvertingButton extends React.Component {
     }
 
     handleClick() {
-        this.setState(oldState => ({
-            changedColour: !oldState.changedColour
-        }));
+        if (this.state.changedColour)
+        {
+            this.setState({
+                changedColour: false
+            });
+        }
+        else
+        {
+            this.setState({
+                changedColour: true
+            });
+        }
     }
 
     render() {

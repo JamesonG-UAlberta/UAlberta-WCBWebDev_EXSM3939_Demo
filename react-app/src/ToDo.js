@@ -6,7 +6,7 @@ To-Do To-Do's!
 ☑ 1. Using the method shown in the ColourThingy component, bind the text field to a state property, and clear it after adding an item.
 ☑ 2. Add a clear button.
 ☑ 3. Add a sort button (alphabetical).
-4. Add checkboxes to each item.
+☑ 4. Add checkboxes to each item.
 5. Add a completed list, and when an item is checked off, move it to the completed list, then disable the checkbox.
 6. Stop disabling the checkbox when moved, and allow the box to be unchecked to move it back to the pending list.
 */
@@ -34,7 +34,7 @@ class ToDo extends React.Component {
             <div>
                 <ul>
                     {/* For each item in our items list, render a list item. */}
-                    {this.state.items.map(x => <li>{x}</li>)}
+                    {this.state.items.map(x => <li><input type="checkbox"></input>{x}</li>)}
                 </ul>
                 {/* Bind our input to a reference called toDoInput, allowing us to use it without a querySelector, etc.*/}
                 <input type="text" value={this.state.inputValue} ref={thisNode => this.toDoInput = thisNode} onChange={this.handleInput}></input>

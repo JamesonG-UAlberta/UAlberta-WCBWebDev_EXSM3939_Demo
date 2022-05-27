@@ -79,3 +79,7 @@ main, .flexColumn {
 .colourInput#blue {
   background-color: lightskyblue;
 }
+
+ul {
+  list-style: none;
+}

@@ -8,7 +8,7 @@ To-Do To-Do's!
 ☑ 3. Add a sort button (alphabetical).
 ☑ 4. Add checkboxes to each item.
 ☑ 5. Add a completed list, and when an item is checked off, move it to the completed list, then disable the checkbox.
-6. Stop disabling the checkbox when moved, and allow the box to be unchecked to move it back to the pending list.
+☑ 6. Stop disabling the checkbox when moved, and allow the box to be unchecked to move it back to the pending list.
 */
 
 class ToDo extends React.Component {
@@ -36,7 +36,7 @@ class ToDo extends React.Component {
                 <ul>
                     <h3>Pending Items</h3>
                     {/* For each item in our items list, render a list item. */}
-                    {this.state.pendingItems.map(x => <li><input type="checkbox" onChange={((event) => {
+                    {this.state.pendingItems.map(x => <li key={x}><input type="checkbox" onChange={((event) => {
                          this.setState(currentState => ({
                             // Replace pending items with everything sans the item we're moving.
                             pendingItems: [...currentState.pendingItems.filter(y => y !== x)],
@@ -48,7 +48,14 @@ class ToDo extends React.Component {
                 <ul>
                     <h3>Completed Items</h3>
                     {/* For each item in our items list, render a list item. */}
-                    {this.state.completedItems.map(x => <li><input type="checkbox" defaultChecked disabled></input>{x}</li>)}
+                    {this.state.completedItems.map(x => <li key={x}><input type="checkbox" defaultChecked onChange={((event) => {
+                         this.setState(currentState => ({
+                            // Replace pending items with everything sans the item we're moving.
+                            completedItems: [...currentState.completedItems.filter(y => y !== x)],
+                            // Append the item we're moving to completed items.
+                            pendingItems: [...currentState.pendingItems, x]
+                        }));
+                    }).bind(this)}></input>{x}</li>)}
                 </ul>
                 {/* Bind our input to a reference called toDoInput, allowing us to use it without a querySelector, etc.*/}
                 <input type="text" value={this.state.inputValue} ref={thisNode => this.toDoInput = thisNode} onChange={this.handleInput}></input>

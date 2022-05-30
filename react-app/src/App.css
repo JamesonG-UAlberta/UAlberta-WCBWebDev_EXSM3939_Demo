@@ -42,3 +42,14 @@ button.changed {
   background-color: black;
   color: white;
 }
+
+fieldset {
+  margin: 0 auto;
+   width: 60%;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}

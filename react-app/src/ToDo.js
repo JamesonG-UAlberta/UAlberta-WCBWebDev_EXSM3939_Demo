@@ -1,6 +1,9 @@
 import './App.css';
 import React from 'react';
 
+// Importing json stores the data into the name provided in the import (dataExample), which can then be referenced (see line 22).
+import dataExample from './data/DataExample.json';
+
 /* 
 To-Do To-Do's!
 ☑ 1. Using the method shown in the ColourThingy component, bind the text field to a state property, and clear it after adding an item.
@@ -16,7 +19,7 @@ class ToDo extends React.Component {
         super(props);
         // Initialize state.
         this.state = {
-            pendingItems: [],
+            pendingItems: dataExample,
             completedItems: [],
             inputValue: ""
         }

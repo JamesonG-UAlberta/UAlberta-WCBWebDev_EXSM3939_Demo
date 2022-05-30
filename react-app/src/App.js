@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import InvertingButton from './InvertingButton';
 import AddingMachine from './AddingMachine';
+import GreetUser from './GreetUser';
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
       </fieldset>
       <fieldset>
         <legend>Exercise 03</legend>
-        <p>To-Do</p>
+        <GreetUser name="James" />
+        <GreetUser name="Bob" />
+        <GreetUser name="Joe" />
       </fieldset>
       <fieldset>
         <legend>Exercise 04</legend>

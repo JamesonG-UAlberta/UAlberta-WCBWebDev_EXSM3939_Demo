@@ -53,3 +53,22 @@ fieldset {
   align-items: center;
   flex-direction: column;
 }
+
+table {
+  border-collapse: collapse;
+  border: 3px solid darkslategray;
+  width: 50%;
+  margin: 0 auto;
+}
+th {
+  text-decoration: underline;
+  font-weight: bold;
+}
+th, td {
+  border: 1px solid grey;
+}
+
+input[type="text"] {
+  width: 35%;
+  margin: 0 10px;
+}

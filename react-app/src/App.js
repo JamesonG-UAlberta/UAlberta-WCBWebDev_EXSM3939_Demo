@@ -4,6 +4,7 @@ import InvertingButton from './InvertingButton';
 import AddingMachine from './AddingMachine';
 import GreetUser from './GreetUser';
 import MadLib from './MadLib';
+import GradeChart from './GradeChart';
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
       </fieldset>
       <fieldset>
         <legend>Exercise 05</legend>
-        <p>To-Do</p>
+        <GradeChart />
       </fieldset>
     </div>
   );

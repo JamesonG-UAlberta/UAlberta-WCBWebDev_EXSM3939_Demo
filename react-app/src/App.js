@@ -3,6 +3,7 @@ import './App.css';
 import InvertingButton from './InvertingButton';
 import AddingMachine from './AddingMachine';
 import GreetUser from './GreetUser';
+import MadLib from './MadLib';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
       </fieldset>
       <fieldset>
         <legend>Exercise 04</legend>
-        <p>To-Do</p>
+        <MadLib name="Jane" place="Edmonton" food="soup" verb="running" feeling="sad" />
       </fieldset>
       <fieldset>
         <legend>Exercise 05</legend>
